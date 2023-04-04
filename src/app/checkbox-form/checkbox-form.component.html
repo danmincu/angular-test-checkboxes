@@ -1,0 +1,9 @@
+<form [formGroup]="form" (ngSubmit)="onSubmit()">
+  <div *ngFor="let type of types">
+    <label>
+      <input type="checkbox" [formControlName]="type">
+      {{ type }}
+    </label>
+  </div>
+  <button type="submit">Submit</button>
+  </form>
