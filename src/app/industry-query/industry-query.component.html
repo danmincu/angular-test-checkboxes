@@ -1,0 +1,10 @@
+<div class="container">
+<input [(ngModel)]="queryString" placeholder="Enter your query">
+<button (click)="getIndustries()">Query</button>
+</div>
+<div *ngFor="let industry of industries">
+<input type="checkbox" [(ngModel)]="industry.checked" (change)="getIndustryActivities(industry)" [attr.title]="industry.description">{{ industry.name }}
+<div *ngFor="let activity of industry.activities">
+  <input type="checkbox" [attr.title]="activity.description">{{ activity.name }}
+</div>
+</div>
